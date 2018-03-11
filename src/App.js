@@ -20,6 +20,11 @@ const CurrentForcast = ({ main, description }) => (
   </h3>
 );
 
+CurrentForcast.propTypes = {
+  main: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
+};
+
 const CurrentTemperature = ({ temp, temp_min, temp_max }) => (
   <Fragment>
     <h3>Temperature (c)</h3>
@@ -31,6 +36,12 @@ const CurrentTemperature = ({ temp, temp_min, temp_max }) => (
   </Fragment>
 );
 
+CurrentTemperature.propTypes = {
+  temp: PropTypes.number.isRequired,
+  temp_min: PropTypes.number.isRequired,
+  temp_max: PropTypes.number.isRequired
+};
+
 const CurrentDay = ({ dt, dt_txt, children }) => (
   <div key={`current-${dt}`} className="current-date">
     <h2>{dt_txt}</h2>
@@ -40,7 +51,8 @@ const CurrentDay = ({ dt, dt_txt, children }) => (
 
 CurrentDay.propTypes = {
   dt: PropTypes.number.isRequired,
-  dt_txt: PropTypes.string.isRequired
+  dt_txt: PropTypes.string.isRequired,
+  children: React.PropTypes.node.isRequired
 };
 
 const ForcastDay = ({ dt, dt_txt, children }) => (
@@ -50,13 +62,19 @@ const ForcastDay = ({ dt, dt_txt, children }) => (
   </button>
 );
 
+ForcastDay.propTypes = {
+  dt: PropTypes.number.isRequired,
+  dt_txt: PropTypes.string.isRequired,
+  children: React.PropTypes.node.isRequired
+};
+
 const ForcastImage = ({ icon, alt }) => (
   <img src={`icons/${icon}.png`} alt={alt} />
 );
 
-CurrentDay.propTypes = {
-  dt: PropTypes.number.isRequired,
-  dt_txt: PropTypes.string.isRequired
+ForcastImage.propTypes = {
+  icon: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
 };
 
 class App extends React.Component {
