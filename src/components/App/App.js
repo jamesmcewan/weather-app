@@ -1,6 +1,5 @@
 import React from 'react';
-import data from '../../JSONStructure';
-import getData from '../../data';
+import data, { forcastData } from '../../data';
 import Currently from '../Currently/Currently';
 import Forcast from '../Forcast/Forcast';
 import Forcasts from '../Forcasts/Forcasts';
@@ -21,11 +20,11 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.getWeatherData();
+    this.getforcastData();
   }
 
-  getWeatherData() {
-    getData()
+  getforcastData() {
+    forcastData()
       .then(response =>
         this.setState({
           data: response
