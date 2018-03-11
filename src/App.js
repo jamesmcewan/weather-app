@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import data from './JSONStructure';
 import getData from './data';
 
@@ -16,7 +17,7 @@ Header.propTypes = {
 
 const CurrentForcast = ({ main, description }) => (
   <h3>
-    Current Forcast: {main} - {description}
+    {main} - {description}
   </h3>
 );
 
@@ -44,7 +45,7 @@ CurrentTemperature.propTypes = {
 
 const CurrentDay = ({ dt, dt_txt, children }) => (
   <div key={`current-${dt}`} className="current-date">
-    <h2>{dt_txt}</h2>
+    <h2>{moment(dt_txt).format('dddd, MMMM Do YYYY, h:mm:ss a')}</h2>
     <div className="current-date__data">{children}</div>
   </div>
 );
@@ -52,12 +53,12 @@ const CurrentDay = ({ dt, dt_txt, children }) => (
 CurrentDay.propTypes = {
   dt: PropTypes.number.isRequired,
   dt_txt: PropTypes.string.isRequired,
-  children: React.PropTypes.node.isRequired
+  children: PropTypes.node.isRequired
 };
 
 const ForcastDay = ({ dt, dt_txt, children }) => (
-  <button key={`forcast-${dt}`} className="forcast__day forcast__day--selected">
-    {dt_txt}
+  <button key={`forcast-${dt}`} className="forcast__day">
+    {moment(dt_txt).format('ddd')}
     {children}
   </button>
 );
@@ -65,16 +66,35 @@ const ForcastDay = ({ dt, dt_txt, children }) => (
 ForcastDay.propTypes = {
   dt: PropTypes.number.isRequired,
   dt_txt: PropTypes.string.isRequired,
-  children: React.PropTypes.node.isRequired
+  children: PropTypes.node.isRequired
 };
 
 const ForcastImage = ({ icon, alt }) => (
-  <img src={`icons/${icon}.png`} alt={alt} />
+  <img className="forcast__image" src={`icons/${icon}.svg`} alt={alt} />
 );
 
 ForcastImage.propTypes = {
   icon: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired
+};
+
+const Today = ({ children }) => <ul>{children}</ul>;
+
+Today.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
+const Hourly = ({ dt, dt_txt, children }) => (
+  <li>
+    <h4>{moment(dt_txt).format('h:mm:ss a')}</h4>
+    <div className="current-date__data">{children}</div>
+  </li>
+);
+
+Hourly.propTypes = {
+  dt: PropTypes.number.isRequired,
+  dt_txt: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 class App extends React.Component {
@@ -107,12 +127,21 @@ class App extends React.Component {
           name={this.state.data.city.name}
           country={this.state.data.city.country}
         />
+
+        <CurrentDay {...this.state.data.list[0]}>
+          <CurrentForcast {...this.state.data.list[0].weather[0]} />
+          <CurrentTemperature {...this.state.data.list[0].main} />
+        </CurrentDay>
+
         {this.state.data.list.map(day => (
-          <CurrentDay {...day}>
-            <CurrentForcast {...day.weather[0]} />
-            <CurrentTemperature {...day.main} />
-          </CurrentDay>
+          <Today {...day}>
+            <Hourly>
+              <CurrentForcast {...day.weather[0]} />
+              <CurrentTemperature {...day.main} />
+            </Hourly>
+          </Today>
         ))}
+
         <nav className="forcast">
           {this.state.data.list.map(day => (
             <ForcastDay {...day}>

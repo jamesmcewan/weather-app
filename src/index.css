@@ -1,5 +1,5 @@
 body {
-  color: #6272a4;
+  color: #20232a;
   font-family: Arial, Helvetica, sans-serif;
   background: #f8f8f2;
   padding: 0;
@@ -16,9 +16,6 @@ li {
   list-style: none;
 }
 
-.weather-app {
-}
-
 .forcast {
   display: flex;
   position: fixed;
@@ -28,21 +25,25 @@ li {
 }
 
 .forcast__day {
-  background: #282a36;
+  background: #20232a;
   flex-grow: 1;
   color: #f8f8f2;
   text-align: center;
-  transform: translateY(50%);
+  transform: translateY(30%);
+  display: flex;
+  flex-direction: column;
   margin: 1px;
-  padding: 10px;
   transition: transform ease-in-out 0.2s;
 }
 
 .forcast__day:hover {
-  transform: translateY(40%);
+  transform: translateY(20%);
 }
+
 .forcast__day--selected {
-  background: #282a36
-    linear-gradient(to top, rgba(139, 233, 253, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
   transform: translateY(5%);
+}
+
+.forcast__image {
+  width: 100px;
 }
