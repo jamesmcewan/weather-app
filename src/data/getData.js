@@ -1,14 +1,14 @@
 // Retrieve data from weather api
 
-function getData() {
+function getData(loc) {
   const url = 'https://api.openweathermap.org/data/2.5/forecast?q=';
-  const location = 'Edinburgh,GB';
+  const location = loc;
   const appId = 'd95f3ccf0a447f1928e3719c88c18453';
 
   return fetch(`${url}${location}&appid=${appId}`)
     .then(res => res.json())
     .then(res => res)
-    .catch(error => console.log(error));
+    .catch(error => error);
 }
 
 export default getData;

@@ -57,5 +57,8 @@
     "transformIgnorePatterns": [
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ]
+  },
+  "devDependencies": {
+    "regenerator-runtime": "^0.11.1"
   }
 }

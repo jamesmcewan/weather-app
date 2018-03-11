@@ -1,5 +1,5 @@
-import data from './data';
+import { dates, city, currentDay } from './data';
 import forcastData from './forcastData';
 import getData from './getData';
 
-export { data as default, forcastData, getData };
+export { dates, city, currentDay, forcastData, getData };

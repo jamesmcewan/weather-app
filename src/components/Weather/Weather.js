@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Weather = ({ main, description }) => (
-  <h3>
+  <p>
     {main} - {description}
-  </h3>
+  </p>
 );
 
 Weather.propTypes = {
