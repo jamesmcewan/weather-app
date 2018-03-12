@@ -22,7 +22,13 @@ Forcasts.propTypes = {
 };
 
 Forcasts.defaultProps = {
-  dates: {},
+  dates: {
+    day0: [
+      {
+        weather: [{ icon: '' }]
+      }
+    ]
+  },
   changeDay: undefined
 };
 

@@ -1,5 +1,4 @@
 import moment from 'moment';
-import getData from './getData';
 
 function getDateString(date) {
   return moment(date).format('YYYYMMDD');
@@ -9,36 +8,50 @@ function nextFiveDays() {
   const nine = moment('21:00', 'hh:mm');
   const tomorrow = moment(Date.now()).add(1, 'd');
   const isAfter9 = moment(Date.now()).isAfter(nine);
-
   const start = isAfter9 ? getDateString(tomorrow) : getDateString(Date.now());
-  const week = [start];
-
-  for (let i = 1; i < 5; i += 1) {
-    week.push(getDateString(moment(start).add(i, 'd')));
-  }
+  const days = [1, 2, 3, 4];
+  const week = [
+    start,
+    ...days.map(i => getDateString(moment(start).add(i, 'd')))
+  ];
 
   return week;
 }
 
 const fiveDays = nextFiveDays();
 
+function getData(loc) {
+  const url = 'https://api.openweathermap.org/data/2.5/forecast?q=';
+  const location = loc;
+  const appId = 'd95f3ccf0a447f1928e3719c88c18453';
+
+  return fetch(`${url}${location}&appid=${appId}`)
+    .then(res => res.json())
+    .then(res => res)
+    .catch(error => error);
+}
+
 function getDates(days, list) {
   const dates = {};
-  for (let i = 0; i < 5; i += 1) {
+
+  days.map((d, i) => {
+    const item = i;
     dates[`day${i}`] = list.filter(
-      d => getDateString(d.dt_txt) === fiveDays[i]
+      dt => getDateString(dt.dt_txt) === days[item]
     );
-  }
+  });
+
   return dates;
 }
 
-export default function forcastData(loc) {
+function forcastData(loc) {
   const location = loc || 'Edinburgh,GB';
   return getData(location)
     .then(response => {
       if (response.cod === '200') {
         const list = [...response.list];
         const dates = getDates(fiveDays, list);
+
         return { cod: response.cod, city: response.city, dates };
       }
       return response;
@@ -46,3 +59,11 @@ export default function forcastData(loc) {
     .then(response => response)
     .catch(error => error);
 }
+
+export {
+  forcastData as default,
+  getDates,
+  getData,
+  nextFiveDays,
+  getDateString
+};

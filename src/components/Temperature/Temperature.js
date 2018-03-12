@@ -5,9 +5,9 @@ const Temperature = ({ temp, temp_min, temp_max }) => (
   <div className="temperature">
     <h3>Temperature (c)</h3>
     <ul>
-      <li>Average: {temp}</li>
-      <li>Min: {temp_min}</li>
-      <li>Max: {temp_max}</li>
+      <li className="temperature__avg">Average: {temp}</li>
+      <li className="temperature__min">Min: {temp_min}</li>
+      <li className="temperature__max">Max: {temp_max}</li>
     </ul>
   </div>
 );

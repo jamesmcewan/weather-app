@@ -1,5 +1,5 @@
 import React from 'react';
-import { forcastData } from '../../data';
+import forcastData from '../../data/forcastData';
 import Header from '../Header/Header';
 import Currently from '../Currently/Currently';
 import Forcasts from '../Forcasts/Forcasts';
@@ -42,8 +42,8 @@ class App extends React.Component {
   }
 
   changeDay(day) {
-    const dts = Object.assign({}, this.state.dates);
-    const newDay = dts[day];
+    const newDay = [...this.state.dates[day]];
+
     this.setState({
       currentDay: newDay
     });

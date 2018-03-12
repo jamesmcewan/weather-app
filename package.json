@@ -4,7 +4,7 @@
   "description": "5 day weather forcast app",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha --require babel-core/register src/**/**.test.js",
+    "test": "jest",
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
   },
@@ -24,7 +24,6 @@
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.10",
@@ -42,7 +41,6 @@
     "html-webpack-plugin": "^3.0.6",
     "jest": "^22.4.2",
     "jest-fetch-mock": "^1.4.2",
-    "mocha": "^5.0.4",
     "moment": "^2.21.0",
     "prettier": "1.11.1",
     "prop-types": "^15.6.1",

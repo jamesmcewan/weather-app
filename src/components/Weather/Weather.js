@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Weather = ({ main, description }) => (
-  <p>
+  <p className="weather">
     {main} - {description}
   </p>
 );
