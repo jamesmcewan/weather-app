@@ -4,7 +4,7 @@
   "description": "5 day weather forcast app",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watch",
     "start": "webpack-dev-server --config webpack.dev.js --open",
     "build": "webpack --config webpack.prod.js"
   },
