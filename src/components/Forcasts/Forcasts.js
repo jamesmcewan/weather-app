@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Forcast from '../Forcast/Forcast';
 
 const Forcasts = ({ dates, changeDay }) => (
-  <nav className="forcast">
+  <nav className="forcasts">
     {Object.keys(dates).map(day => (
       <Forcast
         {...dates[day][0]}

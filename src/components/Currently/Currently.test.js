@@ -7,7 +7,7 @@ import Temperature from './../Temperature/Temperature';
 describe('Currently', () => {
   it('renders', () => {
     const wrapper = mount(<Currently />);
-    expect(wrapper.find('div.current-date')).toHaveLength(1);
+    expect(wrapper.find('div.currently')).toHaveLength(1);
   });
 
   it('contains a header', () => {
@@ -25,7 +25,7 @@ describe('Currently', () => {
 
   it('contains a child div of data', () => {
     const wrapper = mount(<Currently />);
-    expect(wrapper.find('div.current-date__data')).toHaveLength(1);
+    expect(wrapper.find('div.currently__data')).toHaveLength(1);
   });
 
   it('contains a child element of Weather', () => {

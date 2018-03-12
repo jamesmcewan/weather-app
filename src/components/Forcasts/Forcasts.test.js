@@ -10,7 +10,7 @@ const data = {
 describe('Forcasts', () => {
   it('renders', () => {
     const wrapper = mount(<Forcasts />);
-    expect(wrapper.find('nav.forcast')).toHaveLength(1);
+    expect(wrapper.find('nav.forcasts')).toHaveLength(1);
   });
 
   it('has two child Forcast components', () => {

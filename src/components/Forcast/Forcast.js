@@ -4,9 +4,9 @@ import moment from 'moment';
 import SVGIcon from '../SVGIcon/SVGIcon';
 
 const Forcast = ({ dt_txt, day, icon, changeDay }) => (
-  <button className="forcast__day" onClick={() => changeDay(day)}>
-    {moment(dt_txt).format('ddd')}
-    <SVGIcon icon={icon} alt={dt_txt} />
+  <button className="forcast" onClick={() => changeDay(day)}>
+    <p className="forcast__day">{moment(dt_txt).format('ddd')}</p>
+    <SVGIcon icon={icon} alt={dt_txt} className="forcast__image" />
   </button>
 );
 

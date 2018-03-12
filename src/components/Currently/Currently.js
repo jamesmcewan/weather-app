@@ -5,9 +5,9 @@ import Weather from '../Weather/Weather';
 import Temperature from '../Temperature/Temperature';
 
 const Currently = ({ dt_txt, weather, main }) => (
-  <div className="current-date">
+  <div className="currently">
     <h2>{moment(dt_txt).format('dddd, MMMM Do YYYY, h:mm:ss a')}</h2>
-    <div className="current-date__data">
+    <div className="currently__data">
       <Weather {...weather[0]} />
       <Temperature {...main} />
     </div>
