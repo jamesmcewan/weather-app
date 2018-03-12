@@ -10,8 +10,13 @@ const Hourly = ({ dt_txt, children }) => (
 );
 
 Hourly.propTypes = {
-  dt_txt: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
+  dt_txt: PropTypes.string,
+  children: PropTypes.node
+};
+
+Hourly.defaultProps = {
+  dt_txt: '',
+  children: undefined
 };
 
 export default Hourly;

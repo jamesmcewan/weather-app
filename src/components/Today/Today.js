@@ -19,7 +19,11 @@ const Today = ({ cd }) => (
 );
 
 Today.propTypes = {
-  cd: PropTypes.arrayOf(PropTypes.shape({})).isRequired
+  cd: PropTypes.arrayOf(PropTypes.shape({}))
+};
+
+Today.defaultProps = {
+  cd: [{ weather: [] }]
 };
 
 export default Today;
