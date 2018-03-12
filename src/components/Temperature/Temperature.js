@@ -13,9 +13,15 @@ const Temperature = ({ temp, temp_min, temp_max }) => (
 );
 
 Temperature.propTypes = {
-  temp: PropTypes.number.isRequired,
-  temp_min: PropTypes.number.isRequired,
-  temp_max: PropTypes.number.isRequired
+  temp: PropTypes.number,
+  temp_min: PropTypes.number,
+  temp_max: PropTypes.number
+};
+
+Temperature.defaultProps = {
+  temp: 0,
+  temp_min: 0,
+  temp_max: 0
 };
 
 export default Temperature;

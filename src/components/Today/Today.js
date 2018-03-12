@@ -1,15 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Hourly from '../Hourly/Hourly';
+import Weather from '../Weather/Weather';
+import Temperature from '../Temperature/Temperature';
 
-const Today = ({ children }) => (
+const Today = ({ cd }) => (
   <div className="today">
     <h3>Hourly forcasts</h3>
-    <ul>{children}</ul>
+    <ul>
+      {cd.map(day => (
+        <Hourly {...day} key={`h__${day.dt}`}>
+          <Weather {...day.weather[0]} />
+          <Temperature {...day.main} />
+        </Hourly>
+      ))}
+    </ul>
   </div>
 );
 
 Today.propTypes = {
-  children: PropTypes.node.isRequired
+  cd: PropTypes.arrayOf(PropTypes.shape({})).isRequired
 };
 
 export default Today;

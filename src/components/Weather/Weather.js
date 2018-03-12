@@ -8,8 +8,13 @@ const Weather = ({ main, description }) => (
 );
 
 Weather.propTypes = {
-  main: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  main: PropTypes.string,
+  description: PropTypes.string
+};
+
+Weather.defaultProps = {
+  main: '',
+  description: ''
 };
 
 export default Weather;

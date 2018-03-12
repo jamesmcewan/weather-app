@@ -1,10 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Forcast from '../Forcast/Forcast';
 
-const Forcasts = ({ children }) => <nav className="forcast">{children}</nav>;
+const Forcasts = ({ dates, changeDay }) => (
+  <nav className="forcast">
+    {Object.keys(dates).map(day => (
+      <Forcast
+        {...dates[day][0]}
+        key={`f__${day}`}
+        day={day}
+        icon={dates[day][0].weather[0].icon}
+        changeDay={changeDay}
+      />
+    ))}
+  </nav>
+);
 
 Forcasts.propTypes = {
-  children: PropTypes.node.isRequired
+  dates: PropTypes.shape({}),
+  changeDay: PropTypes.func
+};
+
+Forcasts.defaultProps = {
+  dates: {},
+  changeDay: undefined
 };
 
 export default Forcasts;

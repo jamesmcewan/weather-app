@@ -14,11 +14,12 @@ const LocaleInput = ({ error, changeLocale }) => (
 );
 
 LocaleInput.propTypes = {
-  changeLocale: PropTypes.func.isRequired,
+  changeLocale: PropTypes.func,
   error: PropTypes.string
 };
 
 LocaleInput.defaultProps = {
+  changeLocale: undefined,
   error: ''
 };
 

@@ -6,8 +6,13 @@ const SVGIcon = ({ icon, alt }) => (
 );
 
 SVGIcon.propTypes = {
-  icon: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired
+  icon: PropTypes.string,
+  alt: PropTypes.string
+};
+
+SVGIcon.defaultProps = {
+  icon: '',
+  alt: ''
 };
 
 export default SVGIcon;

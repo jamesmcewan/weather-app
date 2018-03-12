@@ -1,14 +1,9 @@
 import React from 'react';
-import { forcastData, dates, city, currentDay } from '../../data';
-import Currently from '../Currently/Currently';
-import Forcast from '../Forcast/Forcast';
-import Forcasts from '../Forcasts/Forcasts';
+import { forcastData } from '../../data';
 import Header from '../Header/Header';
-import Hourly from '../Hourly/Hourly';
-import SVGIcon from '../SVGIcon/SVGIcon';
-import Temperature from '../Temperature/Temperature';
+import Currently from '../Currently/Currently';
+import Forcasts from '../Forcasts/Forcasts';
 import Today from '../Today/Today';
-import Weather from '../Weather/Weather';
 import LocaleInput from '../LocaleInput/LocaleInput';
 
 class App extends React.Component {
@@ -16,9 +11,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      dates,
-      city,
-      currentDay,
+      dates: {},
+      city: {},
+      currentDay: [],
       error: ''
     };
 
@@ -27,7 +22,7 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.getforcastData();
+    this.getforcastData('Edinburgh, GB');
   }
 
   getforcastData(loc) {
@@ -70,36 +65,11 @@ class App extends React.Component {
           />
           <Header {...this.state.city} />
 
-          <Currently {...this.state.currentDay[0]}>
-            <Weather {...this.state.currentDay[0].weather[0]} />
-            <Temperature {...this.state.currentDay[0].main} />
-          </Currently>
+          <Currently {...this.state.currentDay[0]} />
 
-          <Today>
-            {this.state.currentDay.map(day => (
-              <Hourly {...day}>
-                <Weather {...day.weather[0]} />
-                <Temperature {...day.main} />
-              </Hourly>
-            ))}
-          </Today>
+          <Today cd={this.state.currentDay} />
         </div>
-
-        <Forcasts>
-          {Object.keys(this.state.dates).map((day, k) => (
-            <Forcast
-              {...this.state.dates[day][0]}
-              day={day}
-              k={k}
-              changeDay={this.changeDay}
-            >
-              <SVGIcon
-                icon={this.state.dates[day][0].weather[0].icon}
-                alt={this.state.dates[day][0].dt_txt}
-              />
-            </Forcast>
-          ))}
-        </Forcasts>
+        <Forcasts dates={this.state.dates} changeDay={this.changeDay} />
       </div>
     );
   }

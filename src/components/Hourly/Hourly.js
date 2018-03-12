@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 
 const Hourly = ({ dt_txt, children }) => (
-  <li
-    className="today__hour"
-    key={`h-${moment(dt_txt).format('YYYYMMDDhmmss')}`}
-  >
+  <li className="today__hour">
     <h4>{moment(dt_txt).format('h:mm:ss a')}</h4>
     <div className="current-date__data">{children}</div>
   </li>

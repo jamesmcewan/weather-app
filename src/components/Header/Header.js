@@ -8,8 +8,13 @@ const Header = ({ name, country }) => (
 );
 
 Header.propTypes = {
-  name: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired
+  name: PropTypes.string,
+  country: PropTypes.string
+};
+
+Header.defaultProps = {
+  name: '',
+  country: ''
 };
 
 export default Header;
