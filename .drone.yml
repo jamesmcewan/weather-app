@@ -2,6 +2,6 @@ pipeline:
   build:
     image: 'node:9.11.1-alpine'
     commands:
-      - yarn install
+      - yarn
       - yarn test
       - yarn build
