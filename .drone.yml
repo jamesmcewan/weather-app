@@ -5,3 +5,12 @@ pipeline:
       - yarn
       - yarn test
       - yarn build
+  slack:
+    image: plugins/slack
+    webhook: slack_webhook
+    when:
+      status:
+        - success
+        - failure
+    secrets:
+      - slack_webhook
