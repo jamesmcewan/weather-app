@@ -35,7 +35,7 @@ class App extends React.Component {
         return this.setState({
           city: response.city,
           dates: response.dates,
-          currentDay: response.dates.day0
+          currentDay: response.dates[0]
         });
       })
       .catch(reason => this.setState({ error: reason }));
