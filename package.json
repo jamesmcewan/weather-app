@@ -1,12 +1,13 @@
 {
-  "name": "weather-app",
+  "name": "@jamesmcewan/weather-app",
   "version": "1.0.0",
   "description": "5 day weather forcast app",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest",
-    "start": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js"
+    "test": "react-scripts test --env=jsdom",
+    "test:CI": "CI=true react-scripts test --env=jsdom",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
@@ -19,49 +20,28 @@
   },
   "homepage": "https://github.com/jamesmcewan/weather-app#readme",
   "dependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.1",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "clean-webpack-plugin": "^0.1.19",
-    "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.28.10",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.18.2",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jest": "^21.14.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.7.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.0.6",
-    "jest": "^22.4.2",
-    "jest-fetch-mock": "^1.4.2",
-    "moment": "^2.21.0",
-    "prettier": "1.11.1",
-    "prop-types": "^15.6.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "style-loader": "^0.20.3",
-    "uglifyjs-webpack-plugin": "^1.2.3",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11",
-    "webpack-dev-server": "^3.1.1",
-    "webpack-merge": "^4.1.2"
-  },
-  "jest": {
-    "automock": false,
-    "setupFiles": ["./setupJest.js"],
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"]
+    "moment": "^2.24.0",
+    "prettier": "^1.19.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.3.1"
   },
   "devDependencies": {
-    "regenerator-runtime": "^0.11.1"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest-fetch-mock": "^3.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
