@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "react-scripts test --env=jsdom",
+    "test:CI": "CI=true react-scripts test --env=node",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
