@@ -17,8 +17,8 @@ describe('nextFiveDays', () => {
   });
 
   it('should be an array of dates', () => {
-    const expected = /(20\d{2})(\d{2})(\d{2})/g;
-    result.map(r => expect(r).toMatch(expected));
+    const expected = [expect.stringMatching(/(20\d{2})(\d{2})(\d{2})/g)];
+    expect(result).toEqual(expect.arrayContaining(expected));
   });
 });
 
