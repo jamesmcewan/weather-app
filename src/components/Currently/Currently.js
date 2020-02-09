@@ -1,16 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import Weather from '../Weather/Weather';
 import Temperature from '../Temperature/Temperature';
 import Box from '../styles/Box';
 import Heading2 from '../styles/Heading2';
 
+const displayDate = date =>
+  date.toLocaleDateString('en-GB', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
 const Currently = ({ dt_txt, weather, main }) => (
   <Box data-selector="currently">
-    <Heading2>
-      {moment(dt_txt).format('dddd, MMMM Do YYYY, h:mm:ss a')}
-    </Heading2>
+    <Heading2>{displayDate(new Date(dt_txt))}</Heading2>
     <Box data-selector="data">
       <Weather {...weather[0]} />
       <Temperature {...main} />
