@@ -32,14 +32,7 @@ function getData(loc) {
 }
 
 function getDates(days, list) {
-  const dates = {};
-
-  days.map((d, i) => {
-    const item = i;
-    dates[`day${i}`] = list.filter(
-      dt => getDateString(dt.dt_txt) === days[item]
-    );
-  });
+  const dates = days.map((d,i) => list.filter(dt => getDateString(dt.dt_txt) === days[i]));
 
   return dates;
 }

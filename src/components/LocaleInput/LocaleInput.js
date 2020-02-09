@@ -1,16 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Box from '../styles/Box';
+import Input from '../styles/Input';
+import Paragraph from '../styles/Paragraph';
 
 const LocaleInput = ({ error, changeLocale }) => (
-  <div>
-    <input
+  <Box>
+    <Input
       type="text"
-      className="locale"
+      width="100%"
+      fontSize="3rem"
+      p="13px"
+      m="2rem 0"
       placeholder="Enter city..."
       onBlur={e => changeLocale(e)}
     />
-    <p>{error}</p>
-  </div>
+    <Paragraph>{error}</Paragraph>
+  </Box>
 );
 
 LocaleInput.propTypes = {

@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Box from '../styles/Box';
+import Heading3 from '../styles/Heading3';
+import List from '../styles/List';
+import ListItem from '../styles/ListItem';
 
 const Temperature = ({ temp, temp_min, temp_max }) => (
-  <div className="temperature">
-    <h3>Temperature (c)</h3>
-    <ul>
-      <li className="temperature__avg">Average: {temp}</li>
-      <li className="temperature__min">Min: {temp_min}</li>
-      <li className="temperature__max">Max: {temp_max}</li>
-    </ul>
-  </div>
+  <Box>
+    <Heading3>Temperature (c)</Heading3>
+    <List>
+      <ListItem data-selector="avg">Average: {temp}</ListItem>
+      <ListItem data-selector="min">Min: {temp_min}</ListItem>
+      <ListItem data-selector="max">Max: {temp_max}</ListItem>
+    </List>
+  </Box>
 );
 
 Temperature.propTypes = {

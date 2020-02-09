@@ -1,12 +1,12 @@
 # Five Day Weather forcast app
 
-Link to production app - [https://ecstatic-fermi-5824e4.netlify.com/](https://ecstatic-fermi-5824e4.netlify.com/)
+Link to production app - https://wthr.mcwn.dev
 
 ## Development app
 
-- Development `npm start`
-- Build `npm run build`
-- Test `npm test`
+- Development `yarn start`
+- Build `yarn build`
+- Test `yarn test`
 
 ## Usage
 

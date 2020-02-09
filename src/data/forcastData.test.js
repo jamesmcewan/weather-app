@@ -59,10 +59,6 @@ describe('getDates', () => {
     expect(typeof result).toBe('object');
   });
 
-  it('should not return an array', () => {
-    expect(Array.isArray(result)).not.toBe(true);
-  });
-
   it('should have a length of two', () => {
     expect(Object.keys(result)).toHaveLength(2);
   });

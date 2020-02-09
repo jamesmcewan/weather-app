@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Forcasts from './Forcasts';
 
 const data = {
@@ -8,13 +8,13 @@ const data = {
 };
 
 describe('Forcasts', () => {
-  it('renders', () => {
-    const wrapper = mount(<Forcasts />);
-    expect(wrapper.find('nav.forcasts')).toHaveLength(1);
+  it('renders a Nav', () => {
+    const wrapper = shallow(<Forcasts />);
+    expect(wrapper.find('Nav')).toHaveLength(1);
   });
 
   it('has two child Forcast components', () => {
-    const wrapper = mount(<Forcasts dates={data} />);
-    expect(wrapper.find('.forcast__day')).toHaveLength(2);
+    const wrapper = shallow(<Forcasts dates={data} />);
+    expect(wrapper.find('Forcast')).toHaveLength(2);
   });
 });

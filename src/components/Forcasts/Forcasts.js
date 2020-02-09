@@ -1,9 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Forcast from '../Forcast/Forcast';
+import Nav from '../styles/Nav';
 
 const Forcasts = ({ dates, changeDay }) => (
-  <nav className="forcasts">
+  <Nav
+    display="flex"
+    flexFlow="row wrap"
+    position="fixed"
+    bottom="0"
+    width="100%"
+    height="20%"
+    maxHeight="150px"
+  >
     {Object.keys(dates).map(day => (
       <Forcast
         {...dates[day][0]}
@@ -13,7 +22,7 @@ const Forcasts = ({ dates, changeDay }) => (
         changeDay={changeDay}
       />
     ))}
-  </nav>
+  </Nav>
 );
 
 Forcasts.propTypes = {
