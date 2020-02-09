@@ -1,5 +1,5 @@
 {
-  "name": "@jamesmcewan/weather-app",
+  "name": "weather-app",
   "version": "2.0.1",
   "description": "5 day weather forcast app",
   "main": "src/index.js",
@@ -18,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/jamesmcewan/weather-app/issues"
   },
-  "homepage": "https://github.com/jamesmcewan/weather-app#readme",
   "dependencies": {
     "babel-plugin-macros": "^2.8.0",
     "moment": "^2.24.0",
