@@ -1,6 +1,6 @@
 {
   "name": "@jamesmcewan/weather-app",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "5 day weather forcast app",
   "main": "src/index.js",
   "scripts": {
