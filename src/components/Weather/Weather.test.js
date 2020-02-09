@@ -1,15 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Weather from './Weather';
 
 describe('Weather', () => {
-  it('renders', () => {
-    const wrapper = mount(<Weather />);
-    expect(wrapper.find('p.weather')).toHaveLength(1);
+  it('renders a Paragraph', () => {
+    const wrapper = shallow(<Weather />);
+    expect(wrapper.find('Paragraph')).toHaveLength(1);
   });
 
   it('displays the forcast in the correct format', () => {
-    const wrapper = mount(<Weather main="Rain" description="Light rain" />);
-    expect(wrapper.find('p.weather').text()).toEqual('Rain - Light rain');
+    const wrapper = shallow(<Weather main="Rain" description="Light rain" />);
+    expect(wrapper.find('Paragraph').text()).toEqual('Rain - Light rain');
   });
 });

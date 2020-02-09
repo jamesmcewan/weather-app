@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import ListItem from '../styles/ListItem';
+import Heading4 from '../styles/Heading4';
+import Box from '../styles/Box';
 
 const Hourly = ({ dt_txt, children }) => (
-  <li className="today__hour">
-    <h4>{moment(dt_txt).format('h:mm:ss a')}</h4>
-    <div className="current-date__data">{children}</div>
-  </li>
+  <ListItem minWidth="300px">
+    <Heading4>{moment(dt_txt).format('h:mm:ss a')}</Heading4>
+    <Box>{children}</Box>
+  </ListItem>
 );
 
 Hourly.propTypes = {

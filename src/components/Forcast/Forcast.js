@@ -2,12 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import SVGIcon from '../SVGIcon/SVGIcon';
+import Button from '../styles/Button';
+import Paragraph from '../styles/Paragraph';
 
 const Forcast = ({ dt_txt, day, icon, changeDay }) => (
-  <button className="forcast" onClick={() => changeDay(day)}>
-    <p className="forcast__day">{moment(dt_txt).format('ddd')}</p>
-    <SVGIcon icon={icon} alt={dt_txt} className="forcast__image" />
-  </button>
+  <Button
+    bg="#20232a"
+    color="#f8f8f2"
+    flexGrow="1"
+    textAlign="center"
+    m="1px"
+    justifyContent="space-evenly"
+    alignItems="flex-start"
+    onClick={() => changeDay(day)}
+  >
+    <Paragraph fontSize="2rem">{moment(dt_txt).format('ddd')}</Paragraph>
+    <SVGIcon icon={icon} alt={dt_txt} />
+  </Button>
 );
 
 Forcast.propTypes = {

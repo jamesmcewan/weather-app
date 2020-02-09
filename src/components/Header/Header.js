@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Heading1 from '../styles/Heading1';
 
 const Header = ({ name, country }) => (
-  <h1>
+  <Heading1>
     {name}, {country}
-  </h1>
+  </Heading1>
 );
 
 Header.propTypes = {

@@ -1,10 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import SVGIcon from './SVGIcon';
 
 describe('SVGIcon', () => {
-  it('renders', () => {
-    const wrapper = mount(<SVGIcon />);
-    expect(wrapper.find('img')).toHaveLength(1);
+  it('renders an Image', () => {
+    const wrapper = shallow(<SVGIcon />);
+    expect(wrapper.find('Image')).toHaveLength(1);
   });
 });

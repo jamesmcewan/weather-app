@@ -2,18 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Hourly from '../Hourly/Hourly';
 import Weather from '../Weather/Weather';
+import List from '../styles/List';
+import Box from '../styles/Box';
+import Heading3 from '../styles/Heading3';
 
 const Today = ({ cd }) => (
-  <div className="today">
-    <h3>Hourly forcasts</h3>
-    <ul className="today__items">
+  <Box pb="200px" bg="rgba(255, 255, 255, 0.5)">
+    <Heading3>Hourly forcasts</Heading3>
+    <List flexWrap="wrap">
       {cd.map(day => (
         <Hourly {...day} key={`h__${day.dt}`}>
           <Weather {...day.weather[0]} />
         </Hourly>
       ))}
-    </ul>
-  </div>
+    </List>
+  </Box>
 );
 
 Today.propTypes = {

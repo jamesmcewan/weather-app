@@ -1,10 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import LocaleInput from './LocaleInput';
 
 describe('LocaleInput', () => {
-  it('renders', () => {
-    const wrapper = mount(<LocaleInput />);
-    expect(wrapper.find('.locale')).toHaveLength(1);
+  it('renders an Input', () => {
+    const wrapper = shallow(<LocaleInput />);
+    expect(wrapper.find('Input')).toHaveLength(1);
+  });
+  it('renders a Paragraph', () => {
+    const wrapper = shallow(<LocaleInput />);
+    expect(wrapper.find('Paragraph')).toHaveLength(1);
   });
 });

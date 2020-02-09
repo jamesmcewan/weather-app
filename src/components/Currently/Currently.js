@@ -3,15 +3,19 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import Weather from '../Weather/Weather';
 import Temperature from '../Temperature/Temperature';
+import Box from '../styles/Box';
+import Heading2 from '../styles/Heading2';
 
 const Currently = ({ dt_txt, weather, main }) => (
-  <div className="currently">
-    <h2>{moment(dt_txt).format('dddd, MMMM Do YYYY, h:mm:ss a')}</h2>
-    <div className="currently__data">
+  <Box data-selector="currently">
+    <Heading2>
+      {moment(dt_txt).format('dddd, MMMM Do YYYY, h:mm:ss a')}
+    </Heading2>
+    <Box data-selector="data">
       <Weather {...weather[0]} />
       <Temperature {...main} />
-    </div>
-  </div>
+    </Box>
+  </Box>
 );
 
 Currently.propTypes = {

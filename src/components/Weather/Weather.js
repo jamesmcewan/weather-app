@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paragraph from '../styles/Paragraph';
 
 const Weather = ({ main, description }) => (
-  <p className="weather">
+  <Paragraph>
     {main} - {description}
-  </p>
+  </Paragraph>
 );
 
 Weather.propTypes = {

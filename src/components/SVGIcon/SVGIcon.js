@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Image from '../styles/Image';
 
-const SVGIcon = ({ icon, alt, className }) => (
-  <img className={className} src={`icons/${icon}.svg`} alt={alt} />
+const SVGIcon = ({ icon, alt }) => (
+  <Image src={`icons/${icon}.svg`} alt={alt} />
 );
 
 SVGIcon.propTypes = {

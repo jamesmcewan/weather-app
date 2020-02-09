@@ -1,40 +1,38 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Currently from './Currently';
-import Weather from './../Weather/Weather';
-import Temperature from './../Temperature/Temperature';
 
 describe('Currently', () => {
-  it('renders', () => {
-    const wrapper = mount(<Currently />);
-    expect(wrapper.find('div.currently')).toHaveLength(1);
+  it('renders the currently Box', () => {
+    const wrapper = shallow(<Currently />);
+    expect(wrapper.find('Box[data-selector="currently"]')).toHaveLength(1);
   });
 
   it('contains a header', () => {
-    const wrapper = mount(<Currently />);
-    expect(wrapper.find('h2')).toHaveLength(1);
+    const wrapper = shallow(<Currently />);
+    expect(wrapper.find('Heading2')).toHaveLength(1);
   });
 
   it('correctly displays the date', () => {
     const input = '2018-03-13 00:00:00';
     const output = 'Tuesday, March 13th 2018, 12:00:00 am';
 
-    const wrapper = mount(<Currently dt_txt={input} />);
-    expect(wrapper.find('h2').text()).toEqual(output);
+    const wrapper = shallow(<Currently dt_txt={input} />);
+    expect(wrapper.find('Heading2').text()).toEqual(output);
   });
 
   it('contains a child div of data', () => {
-    const wrapper = mount(<Currently />);
-    expect(wrapper.find('div.currently__data')).toHaveLength(1);
+    const wrapper = shallow(<Currently />);
+    expect(wrapper.find('[data-selector="data"]')).toHaveLength(1);
   });
 
   it('contains a child element of Weather', () => {
-    const wrapper = mount(<Currently />);
-    expect(wrapper.contains(<Weather />)).toEqual(true);
+    const wrapper = shallow(<Currently />);
+    expect(wrapper.find('Weather')).toHaveLength(1);
   });
 
   it('contains a child element of Temperature', () => {
-    const wrapper = mount(<Currently />);
-    expect(wrapper.contains(<Temperature />)).toEqual(true);
+    const wrapper = shallow(<Currently />);
+    expect(wrapper.find('Temperature')).toHaveLength(1);
   });
 });
