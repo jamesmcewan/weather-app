@@ -23,7 +23,7 @@ const fiveDays = nextFiveDays();
 function getData(loc) {
   const url = 'https://api.openweathermap.org/data/2.5/forecast?q=';
   const location = loc;
-  const appId = 'd95f3ccf0a447f1928e3719c88c18453';
+  const appId = process.env.REACT_APP_SOURCE;
 
   return fetch(`${url}${location}&appid=${appId}`)
     .then(res => res.json())
@@ -32,7 +32,9 @@ function getData(loc) {
 }
 
 function getDates(days, list) {
-  const dates = days.map((d,i) => list.filter(dt => getDateString(dt.dt_txt) === days[i]));
+  const dates = days.map((d, i) =>
+    list.filter(dt => getDateString(dt.dt_txt) === days[i])
+  );
 
   return dates;
 }
