@@ -52,7 +52,7 @@ const App = () => {
           <LocaleInput {...city} error={error} changeLocale={changeLocale} />
           <Header {...city} />
 
-          <Currently {...currentDay[0]} />
+          {currentDay && <Currently {...currentDay[0]} />}
 
           <Today cd={currentDay} />
         </Box>

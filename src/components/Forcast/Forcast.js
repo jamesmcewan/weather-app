@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import moment from 'moment';
+import { format } from 'date-fns';
 import SVGIcon from '../SVGIcon/SVGIcon';
 import Button from '../styles/Button';
 import Paragraph from '../styles/Paragraph';
@@ -16,7 +16,7 @@ const Forcast = ({ dt_txt, day, icon, changeDay }) => (
     alignItems="flex-start"
     onClick={() => changeDay(day)}
   >
-    <Paragraph fontSize="2rem">{moment(dt_txt).format('ddd')}</Paragraph>
+    <Paragraph fontSize="2rem">{format(new Date(dt_txt), 'eee')}</Paragraph>
     <SVGIcon icon={icon} alt={dt_txt} />
   </Button>
 );
