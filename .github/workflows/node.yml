@@ -11,8 +11,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '13.8.0'
-      - run: yarn install
-      - run: yarn build
-      - run: yarn test:CI
+      - run: npm install
+      - run: npm run build
+      - run: npm run test:CI
         env:
           CI: true

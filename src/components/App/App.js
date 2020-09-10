@@ -16,9 +16,9 @@ const App = () => {
   const [currentDay, setCurrentDay] = useState([]);
   const [error, setError] = useState('');
 
-  const getforcastData = loc => {
+  const getforcastData = (loc) => {
     forcastData(loc)
-      .then(response => {
+      .then((response) => {
         if (response.cod !== '200') {
           setError(response.message);
           return;
@@ -27,15 +27,15 @@ const App = () => {
         setDates(response.dates);
         setCurrentDay(response.dates[0]);
       })
-      .catch(reason => setError(reason));
+      .catch((reason) => setError(reason));
   };
 
-  const changeDay = day => {
+  const changeDay = (day) => {
     const newDay = [...dates[day]];
     setCurrentDay(newDay);
   };
 
-  const changeLocale = e => {
+  const changeLocale = (e) => {
     const newLocale = e.target.value.replace(' ', '');
     getforcastData(newLocale);
   };

@@ -12,7 +12,7 @@ function nextFiveDays() {
   const days = [1, 2, 3, 4];
   const week = [
     start,
-    ...days.map(i => getDateString(moment(start).add(i, 'd')))
+    ...days.map((i) => getDateString(moment(start).add(i, 'd')))
   ];
 
   return week;
@@ -26,14 +26,14 @@ function getData(loc) {
   const appId = process.env.REACT_APP_SOURCE;
 
   return fetch(`${url}${location}&appid=${appId}`)
-    .then(res => res.json())
-    .then(res => res)
-    .catch(error => error);
+    .then((res) => res.json())
+    .then((res) => res)
+    .catch((error) => error);
 }
 
 function getDates(days, list) {
   const dates = days.map((d, i) =>
-    list.filter(dt => getDateString(dt.dt_txt) === days[i])
+    list.filter((dt) => getDateString(dt.dt_txt) === days[i])
   );
 
   return dates;
@@ -42,7 +42,7 @@ function getDates(days, list) {
 function forcastData(loc) {
   const location = loc || 'Edinburgh,GB';
   return getData(location)
-    .then(response => {
+    .then((response) => {
       if (response.cod === '200') {
         const list = [...response.list];
         const dates = getDates(fiveDays, list);
@@ -51,8 +51,8 @@ function forcastData(loc) {
       }
       return response;
     })
-    .then(response => response)
-    .catch(error => error);
+    .then((response) => response)
+    .catch((error) => error);
 }
 
 export {

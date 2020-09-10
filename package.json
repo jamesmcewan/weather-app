@@ -1,6 +1,6 @@
 {
   "name": "weather-app",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "5 day weather forcast app",
   "main": "src/index.js",
   "scripts": {
@@ -23,23 +23,23 @@
   },
   "dependencies": {
     "babel-plugin-macros": "^2.8.0",
-    "moment": "^2.24.0",
+    "moment": "^2.27.0",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "^3.3.1",
-    "styled-components": "^5.0.1",
-    "styled-system": "^5.1.4"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "^3.4.3",
+    "styled-components": "^5.2.0",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "enzyme-to-json": "^3.4.4",
-    "husky": "^4.2.1",
-    "jest-fetch-mock": "^3.0.1",
-    "jest-styled-components": "^7.0.0",
-    "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1"
+    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-to-json": "^3.5.0",
+    "husky": "^4.3.0",
+    "jest-fetch-mock": "^3.0.3",
+    "jest-styled-components": "^7.0.3",
+    "lint-staged": "^10.3.0",
+    "prettier": "^2.1.1"
   },
   "browserslist": {
     "production": [
@@ -55,7 +55,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn pre-commit"
+      "pre-commit": "npm run pre-commit"
     }
   },
   "lint-staged": {
