@@ -13,7 +13,7 @@ const LocaleInput = ({ error, changeLocale }) => (
       p="13px"
       m="2rem 0"
       placeholder="Enter city..."
-      onBlur={e => changeLocale(e)}
+      onBlur={(e) => changeLocale(e)}
     />
     <Paragraph>{error}</Paragraph>
   </Box>

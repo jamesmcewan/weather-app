@@ -64,7 +64,7 @@ describe('getDates', () => {
   });
 
   it('should have two child arrays', () => {
-    Object.keys(result).map(key =>
+    Object.keys(result).map((key) =>
       expect(Array.isArray(result[key])).toBe(true)
     );
   });

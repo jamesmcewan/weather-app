@@ -10,7 +10,7 @@ const Today = ({ cd }) => (
   <Box pb="200px" bg="rgba(255, 255, 255, 0.5)">
     <Heading3>Hourly forcasts</Heading3>
     <List flexWrap="wrap">
-      {cd.map(day => (
+      {cd.map((day) => (
         <Hourly {...day} key={`h__${day.dt}`}>
           <Weather {...day.weather[0]} />
         </Hourly>

@@ -13,7 +13,7 @@ const Forcasts = ({ dates, changeDay }) => (
     height="20%"
     maxHeight="150px"
   >
-    {Object.keys(dates).map(day => (
+    {Object.keys(dates).map((day) => (
       <Forcast
         {...dates[day][0]}
         key={`f__${day}`}
