@@ -13,6 +13,6 @@ jobs:
           node-version: '13.8.0'
       - run: npm install
       - run: npm run build
-      - run: npm run test:CI
+      - run: npm run test
         env:
           CI: true
