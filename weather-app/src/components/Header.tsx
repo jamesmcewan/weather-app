@@ -1,17 +1,8 @@
-type HeaderProps = {
-  name: string;
-  country: string;
-}
-
-const Header = ({ name, country }: HeaderProps) => (
+const Header = () => {
+  return (
   <h1>
-    {name}, {country}
+    {'Weather'}
   </h1>
-);
+)}
 
-Header.defaultProps = {
-  name: '',
-  country: ''
-};
-
-export default Header;
+export default Header

@@ -1,11 +1,11 @@
-import Weather from '++components/Weather'
-import Temperature from '++components/Temperature'
+import Weather from "./Weather";
+import Temperature from "./Temperature";
 
 type CurrentlyProps = {
-  dt_txt: string
-  weather: Array<any>
-  main: any
-}
+  dt_txt: string;
+  weather: Array<any>;
+  main: any;
+};
 
 const Currently = ({ dt_txt, weather, main }: CurrentlyProps) => (
   <div data-selector="currently">
@@ -15,12 +15,6 @@ const Currently = ({ dt_txt, weather, main }: CurrentlyProps) => (
       <Temperature {...main} />
     </div>
   </div>
-)
+);
 
-Currently.defaultProps = {
-  dt_txt: '',
-  weather: [{}],
-  main: {},
-}
-
-export default Currently
+export default Currently;

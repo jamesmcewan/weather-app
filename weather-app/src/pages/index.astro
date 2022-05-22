@@ -1,21 +1,18 @@
 ---
-	import App from '++components/App';
-	const title = 'Weather';
-
+import App from '++components/App'
+const title = 'Weather'
 ---
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>{title}</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<title>{title}</title>
-</head>
-
-<body>
-	<App />
-</body>
-
+  <body>
+    <App client:load />
+  </body>
 </html>

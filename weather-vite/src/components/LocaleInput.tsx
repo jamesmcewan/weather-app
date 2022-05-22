@@ -1,7 +1,7 @@
 type LocaleInputProps = {
-  error: string
-  changeLocale: Function
-}
+  error: string;
+  changeLocale: Function;
+};
 
 const LocaleInput = ({ error, changeLocale }: LocaleInputProps) => (
   <div>
@@ -12,11 +12,11 @@ const LocaleInput = ({ error, changeLocale }: LocaleInputProps) => (
     />
     <p>{error}</p>
   </div>
-)
+);
 
 LocaleInput.defaultProps = {
   changeLocale: undefined,
-  error: '',
-}
+  error: "",
+};
 
-export default LocaleInput
+export default LocaleInput;

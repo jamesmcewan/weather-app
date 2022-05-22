@@ -1,9 +1,9 @@
-import Hourly from '++components/Hourly'
-import Weather from '++components/Weather'
+import Hourly from "./Hourly";
+import Weather from "./Weather";
 
 type TodayProps = {
-  cd: any
-}
+  cd: any;
+};
 
 const Today = ({ cd }: TodayProps) => (
   <div>
@@ -16,10 +16,10 @@ const Today = ({ cd }: TodayProps) => (
       ))}
     </ul>
   </div>
-)
+);
 
 Today.defaultProps = {
   cd: [{ weather: [] }],
-}
+};
 
-export default Today
+export default Today;

@@ -1,13 +1,12 @@
-import Forcast from '++components/Forcast';
+import Forcast from '++components/Forcast'
 
 type ForcastsProps = {
-  dates: any;
-  changeDay: Function;
+  dates: any
+  changeDay: Function
 }
 
 const Forcasts = ({ dates, changeDay }) => (
-  <div
-  >
+  <div>
     {Object.keys(dates).map((day) => (
       <Forcast
         {...dates[day][0]}
@@ -18,17 +17,17 @@ const Forcasts = ({ dates, changeDay }) => (
       />
     ))}
   </div>
-);
+)
 
 Forcasts.defaultProps = {
   dates: {
     day0: [
       {
-        weather: [{ icon: '' }]
-      }
-    ]
+        weather: [{ icon: '' }],
+      },
+    ],
   },
-  changeDay: undefined
-};
+  changeDay: undefined,
+}
 
-export default Forcasts;
+export default Forcasts

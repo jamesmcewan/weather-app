@@ -1,17 +1,17 @@
 type WeatherProps = {
-  main: String
-  description: String
-}
+  main: String;
+  description: String;
+};
 
 const Weather = ({ main, description }: WeatherProps) => (
   <p>
     {main} - {description}
   </p>
-)
+);
 
 Weather.defaultProps = {
-  main: '',
-  description: '',
-}
+  main: "",
+  description: "",
+};
 
-export default Weather
+export default Weather;

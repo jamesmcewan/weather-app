@@ -1,8 +1,8 @@
 type TemperatureProps = {
-  temp: number
-  temp_min: number
-  temp_max: number
-}
+  temp: number;
+  temp_min: number;
+  temp_max: number;
+};
 
 const Temperature = ({ temp, temp_min, temp_max }: TemperatureProps) => (
   <div>
@@ -13,12 +13,12 @@ const Temperature = ({ temp, temp_min, temp_max }: TemperatureProps) => (
       <li data-selector="max">Max: {temp_max}</li>
     </ul>
   </div>
-)
+);
 
 Temperature.defaultProps = {
   temp: 0,
   temp_min: 0,
   temp_max: 0,
-}
+};
 
-export default Temperature
+export default Temperature;
